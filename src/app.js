@@ -29,7 +29,6 @@ const taskList = document.getElementById('task-list')
 const taskCount = document.getElementById('task-count')
 const clearCompletedBtn = document.getElementById('clear-completed')
 const filterButtons = document.querySelectorAll('.filter-btn')
-const unusedVariable = "test";
 
 /**
  * Initialise l'application
