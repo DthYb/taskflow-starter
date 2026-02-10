@@ -2,7 +2,7 @@
 
 > Application de gestion de tâches - Projet fil rouge CI/CD
 
-[![CI](https://github.com/VOTRE-USERNAME/taskflow/actions/workflows/ci.yml/badge.svg)](https://github.com/VOTRE-USERNAME/taskflow/actions/workflows/ci.yml)
+[![CI](https://github.com/DthYb/taskflow/actions/workflows/ci.yml/badge.svg)](https://github.com/DthYb/taskflow/actions/workflows/ci.yml)
 
 ## Description
 
