@@ -17,7 +17,6 @@
 docker pull ghcr.io/DthYb/taskflow-starter:latest
 docker run -d -p 8080:80 ghcr.io/DthYb/taskflow-starter:latest
 
-
 ## Description
 
 TaskFlow est une application web de gestion de tâches (todo list) que vous allez enrichir tout au long de la formation CI/CD.
