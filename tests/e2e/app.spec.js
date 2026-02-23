@@ -5,25 +5,33 @@ test.describe('TaskFlow App', () => {
     await page.goto('/');
   });
 
-  test('should add a task and display it', async ({ page }) => {
-    await page.fill('input[type="text"]', 'Acheter du pain');
-    await page.click('button[type="submit"]');
-    await expect(page.locator('text=Acheter du pain')).toBeVisible();
+  test('ajouter une tâche', async ({ page }) => {
+    await page.getByPlaceholder('Ajouter une nouvelle tâche...').fill('Acheter du pain');
+    await page.getByRole('button', { name: 'Ajouter' }).click();
+
+    await expect(page.getByText('Acheter du pain')).toBeVisible();
   });
 
-  test('should toggle a task as completed', async ({ page }) => {
-    await page.fill('input[type="text"]', 'Tâche à cocher');
-    await page.click('button[type="submit"]');
+  test('cocher une tâche', async ({ page }) => {
+    await page.getByPlaceholder('Ajouter une nouvelle tâche...').fill('Tâche à cocher');
+    await page.getByRole('button', { name: 'Ajouter' }).click();
 
-    await page.click('input[type="checkbox"]');
-    await expect(page.locator('input[type="checkbox"]')).toBeChecked();
+    const checkbox = page.locator('input[type="checkbox"]').first();
+    await checkbox.check();
+
+    await expect(checkbox).toBeChecked();
   });
 
-  test('should delete a task', async ({ page }) => {
-    await page.fill('input[type="text"]', 'Tâche à supprimer');
-    await page.click('button[type="submit"]');
+  test('supprimer une tâche', async ({ page }) => {
+    await page.getByPlaceholder('Ajouter une nouvelle tâche...').fill('Tâche à supprimer');
+    await page.getByRole('button', { name: 'Ajouter' }).click();
 
-    await page.click('button.delete, button[aria-label="Delete"]');
-    await expect(page.locator('text=Tâche à supprimer')).not.toBeVisible();
+    const taskItem = page.getByText('Tâche à supprimer');
+    const container = taskItem.locator('..'); // parent
+    const deleteBtn = container.getByRole('button');
+
+    await deleteBtn.click();
+
+    await expect(page.getByText('Tâche à supprimer')).not.toBeVisible();
   });
 });
