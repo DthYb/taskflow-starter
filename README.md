@@ -10,7 +10,6 @@
 
 ## Demo
 **GitHub Pages** : https://DthYb.github.io/taskflow-starter/
-**Render** : https://<ton-service>.onrender.com/
 
 ## Docker
 ```bash
@@ -89,14 +88,14 @@ taskflow/
 - [X] Upload rapport en artifact
 
 ### Jour 4 : Branches et releases
-- [ ] Configurer branch protection
-- [ ] Créer workflow release
-- [ ] Publier v1.0.0
+- [X] Configurer branch protection
+- [X] Créer workflow release
+- [X] Publier v1.0.0
 
 ### Jour 5 : Déploiement
-- [ ] Compléter le Dockerfile
-- [ ] Push image sur ghcr.io
-- [ ] Déployer sur GitHub Pages
+- [X] Compléter le Dockerfile
+- [X] Push image sur ghcr.io
+- [X] Déployer sur GitHub Pages
 
 ## Fonctionnalités de l'application
 
