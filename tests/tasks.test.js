@@ -1,12 +1,3 @@
-/**
- * Tests pour le module tasks.js
- *
- * OBJECTIF JOUR 3 : Atteindre une couverture de code >= 70%
- *
- * Tests existants : 2 (exemple)
- * Tests à ajouter : ~5-8 pour atteindre 70%
- */
-
 import { describe, it, expect } from 'vitest'
 import { createTask, addTask, deleteTask } from '../src/tasks.js'
 
@@ -23,14 +14,8 @@ describe('createTask', () => {
 
   it('devrait créer une tâche avec une priorité personnalisée', () => {
     const task = createTask('Tâche urgente', 'high')
-
     expect(task.priority).toBe('high')
   })
-
-  // TODO Jour 3 : Ajouter des tests pour les cas d'erreur
-  // - texte vide
-  // - texte null/undefined
-  // - priorité invalide
 })
 
 describe('addTask', () => {
@@ -44,21 +29,49 @@ describe('addTask', () => {
     expect(result[0].text).toBe('Test')
   })
 
-  // TODO Jour 3 : Ajouter des tests
-  // - ajouter à une liste non vide
-  // - vérifier l'immutabilité
+  it('ne doit pas modifier le tableau original (immutabilité)', () => {
+    const tasks = [createTask('A')]
+    const newTask = createTask('B')
+
+    const result = addTask(tasks, newTask)
+
+    expect(result).toHaveLength(2)
+    expect(tasks).toHaveLength(1) // original inchangé
+    expect(result).not.toBe(tasks) // nouveau tableau
+  })
 })
 
 describe('deleteTask', () => {
-  // TODO Jour 3 : Implémenter les tests
-  // - supprimer une tâche existante
-  // - supprimer une tâche inexistante
-  // - vérifier l'immutabilité
-})
+  it('devrait supprimer une tâche par id', () => {
+    const t1 = createTask('A')
+    const t2 = createTask('B')
+    const tasks = addTask(addTask([], t1), t2)
 
-// TODO Jour 3 : Ajouter des tests pour :
-// - toggleTask
-// - filterTasks
-// - clearCompleted
-// - countTasks
-// - sortByPriority
+    const result = deleteTask(tasks, t1.id)
+
+    expect(result).toHaveLength(1)
+    expect(result[0].id).toBe(t2.id)
+  })
+
+  it("si l'id n'existe pas, la liste doit rester identique", () => {
+    const t1 = createTask('A')
+    const tasks = addTask([], t1)
+
+    const result = deleteTask(tasks, 'id-inexistant')
+
+    expect(result).toHaveLength(1)
+    expect(result[0].id).toBe(t1.id)
+  })
+
+  it('ne doit pas modifier le tableau original (immutabilité)', () => {
+    const t1 = createTask('A')
+    const t2 = createTask('B')
+    const tasks = addTask(addTask([], t1), t2)
+
+    const result = deleteTask(tasks, t1.id)
+
+    expect(tasks).toHaveLength(2)     // original inchangé
+    expect(result).toHaveLength(1)    // nouveau tableau
+    expect(result).not.toBe(tasks)    // pas la même référence
+  })
+})
