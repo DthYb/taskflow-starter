@@ -6,6 +6,17 @@
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](./coverage/)
 [![Release](https://img.shields.io/github/v/release/DthYb/taskflow-starter)](https://github.com/DthYb/taskflow-starter/releases)
 
+> Application de gestion de tâches avec CI/CD complet
+
+## Demo
+**GitHub Pages** : https://DthYb.github.io/taskflow-starter/
+**Render** : https://<ton-service>.onrender.com/
+
+## Docker
+```bash
+docker pull ghcr.io/DthYb/taskflow-starter:latest
+docker run -d -p 8080:80 ghcr.io/DthYb/taskflow-starter:latest
+
 
 ## Description
 
