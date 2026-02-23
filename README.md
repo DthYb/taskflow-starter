@@ -6,6 +6,15 @@
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](./coverage/)
 [![Release](https://img.shields.io/github/v/release/DthYb/taskflow-starter)](https://github.com/DthYb/taskflow-starter/releases)
 
+> Application de gestion de tâches avec CI/CD complet
+
+## Demo
+**GitHub Pages** : https://DthYb.github.io/taskflow-starter/
+
+## Docker
+```bash
+docker pull ghcr.io/DthYb/taskflow-starter:latest
+docker run -d -p 8080:80 ghcr.io/DthYb/taskflow-starter:latest
 
 ## Description
 
@@ -79,14 +88,14 @@ taskflow/
 - [X] Upload rapport en artifact
 
 ### Jour 4 : Branches et releases
-- [ ] Configurer branch protection
-- [ ] Créer workflow release
-- [ ] Publier v1.0.0
+- [X] Configurer branch protection
+- [X] Créer workflow release
+- [X] Publier v1.0.0
 
 ### Jour 5 : Déploiement
-- [ ] Compléter le Dockerfile
-- [ ] Push image sur ghcr.io
-- [ ] Déployer sur GitHub Pages
+- [X] Compléter le Dockerfile
+- [X] Push image sur ghcr.io
+- [X] Déployer sur GitHub Pages
 
 ## Fonctionnalités de l'application
 
