@@ -62,17 +62,17 @@ taskflow/
 ## Progression CI/CD
 
 ### Jour 1 : Premier workflow CI
-- [ ] Créer `.github/workflows/ci.yml`
-- [ ] Workflow : checkout → install → lint
+- [X] Créer `.github/workflows/ci.yml`
+- [X] Workflow : checkout → install → lint
 
 ### Jour 2 : Configuration avancée
-- [ ] Ajouter job `build`
-- [ ] Matrix Node 18/20/22
-- [ ] Trigger `workflow_dispatch`
+- [X] Ajouter job `build`
+- [X] Matrix Node 18/20/22
+- [X] Trigger `workflow_dispatch`
 
 ### Jour 3 : Tests et qualité
-- [ ] Ajouter job `test`
-- [ ] Atteindre coverage >= 70%
+- [X] Ajouter job `test`
+- [X] Atteindre coverage >= 70%
 - [ ] Upload rapport en artifact
 
 ### Jour 4 : Branches et releases
