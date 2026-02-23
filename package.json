@@ -1,6 +1,6 @@
 {
   "name": "taskflow",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Application de gestion de tâches - Projet fil rouge CI/CD",
   "type": "module",
   "scripts": {
