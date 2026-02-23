@@ -73,7 +73,7 @@ taskflow/
 ### Jour 3 : Tests et qualité
 - [X] Ajouter job `test`
 - [X] Atteindre coverage >= 70%
-- [ ] Upload rapport en artifact
+- [X] Upload rapport en artifact
 
 ### Jour 4 : Branches et releases
 - [ ] Configurer branch protection
